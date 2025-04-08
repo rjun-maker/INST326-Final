@@ -9,3 +9,5 @@ SATISFACTION_RATING = 80 # Abe's variable
 list = ['panda', 'giraffe', 'penguin', 'shark', 'dragon', 'snake'] # Renee's test list
 
 #Aric is a cool guy!
+
+print("testudo is a turtle")
