@@ -18,4 +18,4 @@ def level_checker(current_level, previous_level, same_level_rounds):
     return same_level_rounds
 
 
-print(how_long_level(2, 2, 5))
+print(level_checker(2, 2, 5))
