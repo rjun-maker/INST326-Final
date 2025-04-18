@@ -5,7 +5,7 @@
 # - way to check how long the eplayer has been at a certain level
 # - way to associate staying at the level with winning the game
 
-def how_long_level(current_level, previous_level, same_level_rounds):
+def level_checker(current_level, previous_level, same_level_rounds):
     """Tracks how many rounds a person have been at a particular level
     """
     
