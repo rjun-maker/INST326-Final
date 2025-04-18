@@ -5,7 +5,7 @@
 # function returns False then the game is over. 
 
 
-budget = 100
+budget = 1000
 satisfaction = 100
 
 #My function  
