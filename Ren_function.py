@@ -9,7 +9,7 @@ import random # choose a random animal event
 def Ren_function(scenario):
     print(scenario)
     
-scenario_tpl = ("You see that the penguins are looking hungry. Do you A, feed"
+scenario_tpl = (("You see that the penguins are looking hungry. Do you A, feed"
 " them or B, ignore them?"), 
 
 ("You see that the giraffes are fighting. Do you A, break up the fight or B"
@@ -22,13 +22,11 @@ scenario_tpl = ("You see that the penguins are looking hungry. Do you A, feed"
 " give it new water?"), 
 
 ("You see that the baby panda is crying. Do you A, give it to its mom or B"
- " kick it?")
-
-#scenario_tpl = 1, 2, 3, 4
-
-random.choice(scenario_tpl)
+ " kick it?"))
 
 Ren_function(random.choice(scenario_tpl))
+
+# User response
 
 userresponse = input("Type A or B ")
 
