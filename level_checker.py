@@ -1,3 +1,4 @@
+# Aiden Anderson's function
 # algorithm that checks the level the player is at, if player can sustain level,
 # they win
 # what's needed:
