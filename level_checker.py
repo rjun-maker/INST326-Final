@@ -8,7 +8,7 @@
 
 
 # checks level, 5 rounds = 1 level, will move on to next level
-# win condition is level 10 for 5 rounds
+# the win condition is level 10 for 5 rounds
 
 def level_checker(current_level, previous_level, same_level_rounds):
     """Tracks how many rounds a person have been at a particular level
