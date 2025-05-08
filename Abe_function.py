@@ -13,7 +13,7 @@ def status_checker(budget, satisfaction):
     if budget < 0:
         print("Game over: You ran out of money")
         return False
-    if satisfaction < 60:
+    if satisfaction < 15:
         print("Animals are angry. Game over")
         return False
     print("Everything good so far.")
@@ -23,7 +23,7 @@ def status_checker(budget, satisfaction):
 #the boolean value of my function status_checker.
 def dummy_round(budget, satisfaction):
     print("Scenario: Pandas need more food. Spend $200 to buy food?")
-    print(f"Current budger: ${budget}")
+    print(f"Current budget: ${budget}")
     print(f"Current satisfaction_score: {satisfaction}")
     
     dummy_decision = input("Do you want to spend money? y/n   ")
