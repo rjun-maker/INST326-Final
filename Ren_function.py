@@ -26,7 +26,8 @@ while status:
     
     # scenarios to pick from randomly
     scenario_tpl = ((f"You see a {animal}, do you {", ".join(actions)} it?"), 
-                    (f"You see a {animal}, they are fighting! do you {", ".join(actions)} it?"))
+                    (f"You see a {animal}, they are fighting! do you {", ".join(actions)} it?"),
+                    (f"You see a {animal}, they are crying... do you {", ".join(actions)} it?"))
 
     # randomly chooses a scenario from scenario_tpl
     Ren_function(random.choice(scenario_tpl)) 
@@ -34,11 +35,19 @@ while status:
     # User response
     user_response = input()
     
+    print("***********************")
+    
     # update animal affection/satisfaction score
     ademir_function.update_affection(animal, ademir_function.animals_dict, user_response)
     print("Updated pet score: ", ademir_function.animals_dict[animal])
     
+    # buget
+    #Abe_function.status_checker(budget, statisfaction)
+    
     # check if game over
     status= Abe_function.status_checker(100, ademir_function.animals_dict[animal])
+    
+    # check what level the player is at
+    #whoaLevel = level_checker.win_condition
     
     

@@ -10,8 +10,7 @@ p_action_good = {
     "cuddle": 20 
     }
 p_action_silly = {
-    'pet' : 5, 
-    'bitch slap' : -50, 
+    'b*tch slap' : -50, 
     'swim?' : 0, 
     'EAT' : -10000, 
     'bazinga!' : 100000
@@ -23,7 +22,7 @@ p_action_bad = {
     "insult": -10
     }
 
-animals = ["Dog", "Cat", "Hamster", "Fish"]
+animals = ["Tiger", "Elephant", "Shark", "Penguin", "Panda"]
 affection = 50
 
 #dictionary for animals  
