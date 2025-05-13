@@ -1,7 +1,7 @@
 # Final Project interim deliverable - Ademir Ferreyra
 
 #def with parameters
-
+import random
 
 p_action_good = {
     "pet" : 5,
@@ -28,8 +28,48 @@ affection = 50
 #dictionary for animals  
 animals_dict = {animal: affection for animal in animals}
 
+#############################################################################
+# Abe's changes
+#adding budget impact
+budget_impact = {
+    "pet" : (-10, -1),
+    "feed" : (-100, -1),
+    "play" :(-30, 30),
+    "cuddle": (0, 20),
+    "b*tch slap" : (-200, -1), 
+    "swim?" : (-100, 100), 
+    "EAT" : (-10000, 0), 
+    "bazinga!" : (-1000, 1000), 
+    "slap": (-100, 100),
+    "ignore": (-100, 100),
+    "kick": (-100, 100),
+    "insult": (-100, 100)
+}
+
+#This function will take the action from user and randomly pick an impact
+#on the player budget. 
+#Abe's function
+def get_budget_impact(action):
+    """Takes an action and picks a random integers from budget_impacts
+
+    Args:
+        action (dic): dictionary of values
+
+    Returns:
+        int: based on the action, it returns a random integer
+    
+    Side effects:
+        Returns an integer
+    """
+    if action not in budget_impact:
+        return 0
+    low, high = budget_impact[action]
+    return random.randint(low, high)
+#############################################################################
+
+
 def update_affection(animal_name, animals_dict, player_action):
-    """updates the affection level of the animal
+    """_summary_
 
     Args:
         animal_name (str): name of animal
@@ -43,17 +83,13 @@ def update_affection(animal_name, animals_dict, player_action):
         raise ValueError(f"{animal_name} could not be found in the zoo")
 
     if player_action not in p_action_good:
-        if player_action not in p_action_silly:
-            if player_action not in p_action_bad:
-                raise ValueError(f"Unknown Action: {player_action}")
+        if player_action not in p_action_bad:
+            raise ValueError(f"Unknown Action: {player_action}")
     
 #get the current affection level
     current_affection = animals_dict[animal_name]
     if player_action in p_action_good:
         change = p_action_good[player_action]
-    elif player_action in p_action_silly:
-        change = p_action_silly[player_action]
-        print("lol that was silly")
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
     
@@ -69,8 +105,3 @@ def update_affection(animal_name, animals_dict, player_action):
     animals_dict[animal_name] = new_affection
 
     return new_affection
-
-    
-
-
-
