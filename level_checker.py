@@ -57,60 +57,60 @@ class LevelChecker:
     def __str__(self):
         return f"Level {self.current_level}, Rounds at current level: {self.same_level_rounds}"
 
-    def win_condition(self):
-        """determines if player wins by staying at max level for 5 rounds
+#     def win_condition(self):
+#         """determines if player wins by staying at max level for 5 rounds
     
-    Args:
-        current_level (int): player's current level
-        same_level_rounds (int): how many rounds the player has stayed at the
-        current level
+#     Args:
+#         current_level (int): player's current level
+#         same_level_rounds (int): how many rounds the player has stayed at the
+#         current level
     
-    Returns
-        bool: Returns true if player is  at level 10 for 5 rounds
-        """
-        return self.current_level == 10 and self.same_level_rounds >= 5
+#     Returns
+#         bool: Returns true if player is  at level 10 for 5 rounds
+#         """
+#         return self.current_level == 10 and self.same_level_rounds >= 5
 
 
-def level_checker(current_level, previous_level, same_level_rounds):
-    """Tracks how many rounds a person have been at a particular level
+# def level_checker(current_level, previous_level, same_level_rounds):
+#     """Tracks how many rounds a person have been at a particular level
     
-    Args:
-        current_level (int): current level of the player
-        previous_level (int): level of the player in the former round
-        same_level_rounds (int): how many rounds the player has done at their
-        current level
+#     Args:
+#         current_level (int): current level of the player
+#         previous_level (int): level of the player in the former round
+#         same_level_rounds (int): how many rounds the player has done at their
+#         current level
     
-    Returns:
-        int: update count of rounds at player's current level
-    """
+#     Returns:
+#         int: update count of rounds at player's current level
+#     """
     
-    if current_level == previous_level:
-        same_level_rounds += 1
-    else:
-        # if the level has changed, will go back to one
-        same_level_rounds = 1
+#     if current_level == previous_level:
+#         same_level_rounds += 1
+#     else:
+#         #if the level has changed, will go back to one
+#         same_level_rounds = 1
 
-    return same_level_rounds
+#     return same_level_rounds
 
 
-def win_condition(current_level, duration):
-    """determines if player wins by staying at max level for 5 rounds
+# def win_condition(current_level, duration):
+#     """determines if player wins by staying at max level for 5 rounds
     
-    Args:
-        current_level (int): player's current level
-        same_level_rounds (int): how many rounds the player has stayed at the
-        current level
+#     Args:
+#         current_level (int): player's current level
+#         same_level_rounds (int): how many rounds the player has stayed at the
+#         current level
     
-    Returns
-        bool: Returns true if player is  at level 10 for 5 rounds
-    """
-    return current_level == 10 and duration >= 5
+#     Returns
+#         bool: Returns true if player is  at level 10 for 5 rounds
+#     """
+#     return current_level == 10 and duration >= 5
 
-print(level_checker(2, 2, 5))
+# print(level_checker(2, 2, 5))
 
-WIN_GOAL = 5
-duration = 4
+# WIN_GOAL = 5
+# duration = 4
 
-if win_condition(duration, WIN_GOAL):
-    print("You win")
+# if win_condition(duration, WIN_GOAL):
+#     print("You win")
     
