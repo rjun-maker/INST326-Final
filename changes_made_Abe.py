@@ -33,9 +33,6 @@ def Ren_function(scenario):
   print(scenario)
   
 budget = 1000
-  # make insult neutral
-  # add more actions
-    
 
 status = True
 while status:
@@ -72,7 +69,7 @@ while status:
     ademir_function.update_affection(animal, ademir_function.animals_dict, user_response)
     
     # update the budget impact
-    budget_change = Abe_function.get_budget_impact(user_response) # something is wrong with this... Attirbute Error
+    budget_change = ademir_function.get_budget_impact(user_response) # something is wrong with this... Attirbute Error
     budget += budget_change
     
     print("Updated pet score: ", ademir_function.animals_dict[animal])
