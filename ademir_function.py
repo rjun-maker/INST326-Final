@@ -50,6 +50,8 @@ def update_affection(animal_name, animals_dict, player_action):
     current_affection = animals_dict[animal_name]
     if player_action in p_action_good:
         change = p_action_good[player_action]
+    elif player_action in p_action_silly:
+        change = p_action_silly[player_action]
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
     
