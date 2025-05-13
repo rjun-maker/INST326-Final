@@ -5,7 +5,7 @@ pop out an animal event.
 """
 
 import random # choose a random animal event
-import level_checker 
+from level_checker import LevelChecker
 import ademir_function
 import Abe_function
 
@@ -45,9 +45,9 @@ while status:
     #Abe_function.status_checker(budget, statisfaction)
     
     # check if game over
-    status= Abe_function.status_checker(100, ademir_function.animals_dict[animal])
+    status = Abe_function.status_checker(100, ademir_function.animals_dict[animal])
     
     #creating level checker instance
-    player = level_checker()
+    player = LevelChecker()
     player.update_level()    
     
