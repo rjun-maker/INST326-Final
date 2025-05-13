@@ -43,8 +43,9 @@ def update_affection(animal_name, animals_dict, player_action):
         raise ValueError(f"{animal_name} could not be found in the zoo")
 
     if player_action not in p_action_good:
-        if player_action not in p_action_bad:
-            raise ValueError(f"Unknown Action: {player_action}")
+        if player_action not in p_action_silly:
+            if player_action not in p_action_bad:
+                raise ValueError(f"Unknown Action: {player_action}")
     
 #get the current affection level
     current_affection = animals_dict[animal_name]
@@ -52,6 +53,7 @@ def update_affection(animal_name, animals_dict, player_action):
         change = p_action_good[player_action]
     elif player_action in p_action_silly:
         change = p_action_silly[player_action]
+        print("lol that was silly")
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
     
