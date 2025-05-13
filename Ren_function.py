@@ -22,8 +22,9 @@ while status:
     animal = random.choice(ademir_function.animals) # pick a random animal
     actions = random.sample(sorted(ademir_function.p_action_good), k=2) # pick two random good actions
     actions = actions + (random.sample(sorted(ademir_function.p_action_bad), k=2)) # pick two random bad actions, and combine with the good actions
-
+    actions = actions + (random.sample(sorted(ademir_function.p_action_silly), k=1)) #pick a random silly action
     
+
     # scenarios to pick from randomly
     scenario_tpl = ((f"You see a {animal}, do you {", ".join(actions)} it?"), 
                     (f"You see a {animal}, they are fighting! do you {", ".join(actions)} it?"),
