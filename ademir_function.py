@@ -1,8 +1,8 @@
 # Final Project interim deliverable - Ademir Ferreyra
 
 #def with parameters
-
-
+import random
+#actions
 p_action_good = {
     "pet" : 5,
     "feed" : 10,
@@ -21,6 +21,23 @@ p_action_bad = {
     "kick": -20,
     "insult": -10
     }
+
+#comments
+silly_comments = ["lol that was silly", 
+                  "trees died for this.",
+                  "this is why we can't have nice things"
+                  "you think you're all that huh..."]
+
+good_comments = ["aww so sweet",
+                 "want a cookie?",
+                 "you're basically an animal whisperer",
+                 "W zookeper",
+                 "They’re wagging their tail... or fins? wait what's a tail"]
+
+bad_comments = ["why would you do that :(",
+                "...why?",
+                "do better...",
+                "APOLOGIZE WITH TEARS. NOW. "]
 
 animals = ["Tiger", "Elephant", "Shark", "Penguin", "Panda"]
 affection = 50
@@ -51,11 +68,13 @@ def update_affection(animal_name, animals_dict, player_action):
     current_affection = animals_dict[animal_name]
     if player_action in p_action_good:
         change = p_action_good[player_action]
+        print(random.choice(good_comments))
     elif player_action in p_action_silly:
         change = p_action_silly[player_action]
-        print("lol that was silly")
+        print(random.choice(silly_comments)) #random silly feedback
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
+        print(random.choice(bad_comments))
     
 
 #keep affection between 0-100
