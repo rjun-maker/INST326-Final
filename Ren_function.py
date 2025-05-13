@@ -47,6 +47,7 @@ while status:
     # check if game over
     status= Abe_function.status_checker(100, ademir_function.animals_dict[animal])
     
-    level = level_checker.win_condition()
-    
+    #creating level checker instance
+    player = level_checker()
+    player.update_level()    
     
