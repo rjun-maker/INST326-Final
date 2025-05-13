@@ -49,5 +49,5 @@ while status:
     
     #creating level checker instance
     player = LevelChecker()
-    player.update_level()    
+    player.update_level(2)    
     
