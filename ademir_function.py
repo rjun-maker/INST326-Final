@@ -29,7 +29,7 @@ affection = 50
 animals_dict = {animal: affection for animal in animals}
 
 def update_affection(animal_name, animals_dict, player_action):
-    """_summary_
+    """updates the affection level of the animal
 
     Args:
         animal_name (str): name of animal
