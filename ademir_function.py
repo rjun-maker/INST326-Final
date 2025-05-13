@@ -120,7 +120,7 @@ def update_affection(animal_name, animals_dict, player_action):
         print(random.choice(silly_comments))
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
-        change = p_action_silly[player_action]
+        print(random.choice(bad_comments))
     
 
     
