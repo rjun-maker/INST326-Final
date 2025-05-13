@@ -7,6 +7,7 @@
 
 budget = 1000
 satisfaction = 100
+import random
 
 #My function  
 def status_checker(budget, satisfaction):
@@ -18,6 +19,14 @@ def status_checker(budget, satisfaction):
         return False
     print("Everything good so far.")
     return True
+
+#This function will take the action from user and randomly pick an impact
+#on the player budget. 
+def get_budget_impact(action):
+    if action not in budget_impact:
+        return 0
+    low, high = budget_impact[action]
+    return random.randint(low, high)
 
 #dummy function to simulate what a round could look like. The function returns
 #the boolean value of my function status_checker.
@@ -47,6 +56,8 @@ def dummy_start_game():
 
 if __name__ == "__main__":  
     dummy_start_game()
+    
+
        
        
         
