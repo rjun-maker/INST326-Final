@@ -25,7 +25,7 @@ p_action_bad = {
 #comments
 silly_comments = ["lol that was silly", 
                   "trees died for this.",
-                  "this is why we can't have nice things"
+                  "this is why we can't have nice things",
                   "you think you're all that huh..."]
 
 good_comments = ["aww so sweet",
