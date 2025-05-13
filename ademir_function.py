@@ -26,18 +26,24 @@ p_action_bad = {
 silly_comments = ["lol that was silly", 
                   "trees died for this.",
                   "this is why we can't have nice things",
-                  "you think you're all that huh..."]
+                  "you think you're all that huh...",
+                  "CAN YOU STOP",
+                  "i'm calling my lawyers"]
 
 good_comments = ["aww so sweet",
                  "want a cookie?",
                  "you're basically an animal whisperer",
                  "W zookeper",
-                 "They’re wagging their tail... or fins? wait what's a tail"]
+                 "They’re wagging their tail... or fins? wait what's a tail",
+                 "doing your job for once!"]
 
 bad_comments = ["why would you do that :(",
                 "...why?",
                 "do better...",
-                "APOLOGIZE WITH TEARS. NOW. "]
+                "APOLOGIZE WITH TEARS. NOW. ",
+                "wait is this even legal",
+                "can you not",
+                "i see you."]
 
 animals = ["Tiger", "Elephant", "Shark", "Penguin", "Panda"]
 affection = 50
