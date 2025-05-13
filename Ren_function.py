@@ -38,7 +38,8 @@ while status:
     animal = random.choice(ademir_function.animals) # pick a random animal
     actions = random.sample(sorted(ademir_function.p_action_good), k=2) # pick two random good actions
     actions = actions + (random.sample(sorted(ademir_function.p_action_bad), k=2)) # pick two random bad actions, and combine with the good actions
-  
+    actions = actions + (random.sample(sorted(ademir_function.p_action_silly), k=1)) #pick a random silly action
+
 #############################################################################
   # Abe's changes
   # I simplfied the scenarios   
