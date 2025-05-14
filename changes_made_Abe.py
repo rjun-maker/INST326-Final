@@ -273,9 +273,4 @@ def status_checker(budget):
     
     False if budget > 0 else False, print("Game over: You ran out of money")
     
-    # if budget < 0:
-    #     print("Game over: You ran out of money")
-    #     return False
-    # else:
-    #     return True
     
