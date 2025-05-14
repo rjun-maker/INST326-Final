@@ -55,6 +55,7 @@ class LevelChecker:
         else:
             self.same_level_rounds = 1
         self.current_level = new_level
+        
 
     def __str__(self):
         return f"Level {self.current_level}, Rounds at current level: {self.same_level_rounds}"
