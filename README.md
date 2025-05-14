@@ -12,12 +12,23 @@ Type: python3 changes_by_Abe.py
 Once you run the above command line in the terminal you will be greeted with a title screen and 5 different actions you can input. If you input a different action from the list presented or misspell it an error will pop up. Each time you input a choice based on the actions presented you can either gain or lose money and a pet score/affection which gets updated each round.
 
 ### annotated biliography
-An annotated bibliography of all sources you used to develop your project, including sources of data, sources of background information about your project topic, and sources about Python programming that informed specific aspects of your code. For each source, explain how you used the source. You do not need to cite any INST 326 course materials.
+None we used our brains.
 
 ### attribution
 Attribution: in order to evaluate whether each member has made a substantial, original contribution to the project, please provide a table like the one below, with a separate row for each method or function.
 
-Key: Method/function | Primary Author | Techniques demonstrated
+Method/function | Primary Author | Techniques demonstrated
 
+Ren_function | Renee Jun and Abdurakhmon (Abe) Tukhtasinov | use of key function sorted()
+
+get_budget_impact | Ademir Ferreyra | conditonal expression
+
+update_affection | Ademir Ferreyra | keyword arguments
+
+status_checker | Renee Jun and Abdurakhmon (Abe) Tukhtasinov | conditional expression
+
+__str__ | Aiden Anderson | magic method other than __init__()
+
+LevelChecerk class | Aiden Anderson | custom class
 
 
