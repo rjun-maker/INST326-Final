@@ -3,13 +3,13 @@
 ## Team RAAA members include Renee Jun, Aiden Anderson, Ademir Ferreyra, and Abdurakhmon (Abe) Tukhtasinov
 
 ### explanation
-The final project is a zoo keeper simulator where 
+The final project is a zoo keeper simulator where the player can choose from 5 different randomized choices which results in a randomized range of effects. The player needs to win a certain amount of rounds to progress to the next level where they eventually can win the game. The player also needs to keep their budget and the animal's affection level in mind because if it goes below 0 you lose the game.
 
 ### how to run the program
-Clear instructions on how to run your program from the command line. You do not need to explain how to run the program on Windows and on MacOS; just pick one. If your program takes command-line arguments, please document the command-line interface (which arguments are required? which are optional, if any? what data types are you looking for? are there a specific format for data files? etc.)
+Type: python3 changes_by_Abe.py
 
 ### how to use the program
-Clear instructions on how to use your program and/or interpret the output of the program. Anything the user might encounter while using your program that a random person on the street would not find self-explanatory needs to be explained in your instructions.
+Once you run the above command line in the terminal you will be greeted with a title screen and 5 different actions you can input. If you input a different action from the list presented or misspell it an error will pop up. Each time you input a choice based on the actions presented you can either gain or lose money and a pet score/affection which gets updated each round.
 
 ### annotated biliography
 An annotated bibliography of all sources you used to develop your project, including sources of data, sources of background information about your project topic, and sources about Python programming that informed specific aspects of your code. For each source, explain how you used the source. You do not need to cite any INST 326 course materials.
@@ -17,6 +17,7 @@ An annotated bibliography of all sources you used to develop your project, inclu
 ### attribution
 Attribution: in order to evaluate whether each member has made a substantial, original contribution to the project, please provide a table like the one below, with a separate row for each method or function.
 
-Method/function	Primary author 	Techniques demonstrated
-Tunnel.find_connections	Avery Student	sequence unpacking
-parse_args	Frankie Learner	ArgumentParser class
+Key: Method/function | Primary Author | Techniques demonstrated
+
+
+
