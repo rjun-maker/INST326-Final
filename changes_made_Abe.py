@@ -5,7 +5,7 @@ pop out an animal event.
 
 """
 
-import random # choose a random animal event
+import random 
 import level_checker 
 import ademir_function
 import Abe_function
@@ -32,14 +32,15 @@ print("""=======================================================================
 def Ren_function(scenario):
   print(scenario)
   
-budget = 1000
+budget = 50
+affection = 50
 
 status = True
 while status:
     animal = random.choice(ademir_function.animals) # pick a random animal
     actions = random.sample(sorted(ademir_function.p_action_good), k=2) # pick two random good actions
     actions = actions + (random.sample(sorted(ademir_function.p_action_bad), k=2)) # pick two random bad actions, and combine with the good actions
-  
+    actions = actions + (random.sample(sorted(ademir_function.p_action_silly), k=1))
     
     # scenarios to pick from randomly
     joined_actions = ", ".join(actions)
@@ -69,20 +70,13 @@ while status:
     ademir_function.update_affection(animal, ademir_function.animals_dict, user_response)
     
     # update the budget impact
-    budget_change = ademir_function.get_budget_impact(user_response) # something is wrong with this... Attirbute Error
+    budget_change = ademir_function.get_budget_impact(user_response)
     budget += budget_change
     
     print("Updated pet score: ", ademir_function.animals_dict[animal])
     print(f"Current budget: ${budget} \n")
     status = Abe_function.status_checker(budget)
-
     
-    # check if game over
-   
-    
-    
-    # check what level the player is at
-    #whoaLevel = level_checker.win_condition
     
     
 #########################################################################################################
@@ -114,7 +108,6 @@ p_action_bad = {
     }
 
 animals = ["Tiger", "Elephant", "Shark", "Penguin", "Panda"]
-affection = 50
 
 #dictionary for animals  
 animals_dict = {animal: affection for animal in animals}
@@ -134,6 +127,24 @@ budget_impact = {
     "kick": (-100, 100),
     "insult": (-100, 100)
 }
+
+
+#comments
+silly_comments = ["lol that was silly", 
+                  "trees died for this.",
+                  "this is why we can't have nice things",
+                  "you think you're all that huh..."]
+
+good_comments = ["aww so sweet",
+                 "want a cookie?",
+                 "you're basically an animal whisperer",
+                 "W zookeper",
+                 "They’re wagging their tail... or fins? wait what's a tail"]
+
+bad_comments = ["why would you do that :(",
+                "...why?",
+                "do better...",
+                "APOLOGIZE WITH TEARS. NOW. "]
 
 #This function will take the action from user and randomly pick an impact
 #on the player budget. 
@@ -160,14 +171,20 @@ def update_affection(animal_name, animals_dict, player_action):
 
     if player_action not in p_action_good:
         if player_action not in p_action_bad:
-            raise ValueError(f"Unknown Action: {player_action}")
+                if player_action not in p_action_silly:
+                    raise ValueError(f"Unknown Action: {player_action}")
     
 #get the current affection level
     current_affection = animals_dict[animal_name]
     if player_action in p_action_good:
         change = p_action_good[player_action]
+        print(random(good_comments or silly_comments))
     elif player_action in p_action_bad:
         change = p_action_bad[player_action]
+        print(random(bad_comments or silly_comments))
+    elif player_action in p_action_silly:
+        change = p_action_silly[player_action]
+        print(random(bad_comments or silly_comments))
     
 
 #keep affection between 0-100
@@ -192,7 +209,6 @@ def update_affection(animal_name, animals_dict, player_action):
 # function returns False then the game is over. 
 
 
-budget = 1000
 #My function  
 def status_checker(budget):
     if budget < 0:
@@ -200,37 +216,4 @@ def status_checker(budget):
         return False
     else:
         return True
-
-
-
-#dummy function to simulate what a round could look like. The function returns
-#the boolean value of my function status_checker.
-'''
-def dummy_round(budget):
-    print("Scenario: Pandas need more food. Spend $200 to buy food?")
-    print(f"Current budget: ${budget}")
-    
-    dummy_decision = input("Do you want to spend money? y/n   ")
-    
-    if dummy_decision == 'y':
-        budget = budget - 200
-    else:
-        budget = budget + 100
-    
-    return status_checker(budget)
-
-#Dummy function to start the game. If status_checker returns False then this 
-#function ends the game.   
-def dummy_start_game():
-    print("Zoo simulator")
-    if dummy_round(budget):
-        print("You survived")
-    else:
-        print("Game over")
-
-if __name__ == "__main__":  
-    dummy_start_game()
-'''       
-       
-        
     
