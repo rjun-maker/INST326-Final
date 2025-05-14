@@ -1,7 +1,6 @@
-#### Ren_function.py ####
 """ 
-function that will determine a randomly generated scenario the result will
-pop out an animal event.
+Zoo keeper simulator! Made by Team RAAA (Renee Jun, Aiden Anderson, 
+Ademir Ferreyra, and Abdurakhmon (Abe) Tukhtasinov)
 
 """
 
@@ -30,17 +29,43 @@ print("""=======================================================================
 
 
 def Ren_function(scenario):
-  print(scenario)
+    """ 
+    
+    Primary author: Renee Jun and Abdurakhmon (Abe) Tukhtasinov
+    
+    Techniques: use of key function sorted()
+    
+    Description: Function that randomizes a scenario and 2 good choices, 2 bad 
+    choices, and a silly choice the player can choose. There is a scenrio_tpl 
+    that has 4 different prompts that pop up. It also calls for the
+    get_budget_impact function and update_affection function to keep track
+    of the player's budget and affection.
+    
+    Args:
+
+        scenario:
+    
+    Returns:
+        A print statement showing which scenario and choices the player can pick
+    
+    """
+    print(scenario)
   
-budget = 50
-affection = 50
+budget = 100
+affection = 100
 
 status = True
 while status:
     animal = random.choice(ademir_function.animals) # pick a random animal
-    actions = random.sample(sorted(ademir_function.p_action_good), k=2) # pick two random good actions
-    actions = actions + (random.sample(sorted(ademir_function.p_action_bad), k=2)) # pick two random bad actions, and combine with the good actions
-    actions = actions + (random.sample(sorted(ademir_function.p_action_silly), k=1))
+    
+    actions = random.sample(sorted(ademir_function.p_action_good),\
+        k=2) # pick two random good actions
+    
+    actions = actions + (random.sample(sorted(ademir_function.p_action_bad),\
+        k=2)) # pick two random bad actions, and combine with the good actions
+    
+    actions = actions + (random.sample(sorted(ademir_function.p_action_silly),\
+        k=1))
     
     # scenarios to pick from randomly
     joined_actions = ", ".join(actions)
@@ -67,7 +92,8 @@ while status:
     print("***********************")
     
     # update animal affection/satisfaction score
-    ademir_function.update_affection(animal, ademir_function.animals_dict, user_response)
+    ademir_function.update_affection(animal, ademir_function.animals_dict, \
+        user_response)
     
     # update the budget impact
     budget_change = ademir_function.get_budget_impact(user_response)
@@ -80,10 +106,6 @@ while status:
     
     
 #########################################################################################################
-
-####  ademir_function.py ######
-
-# Final Project interim deliverable - Ademir Ferreyra
 
 #def with parameters
 import random
@@ -146,9 +168,24 @@ bad_comments = ["why would you do that :(",
                 "do better...",
                 "APOLOGIZE WITH TEARS. NOW. "]
 
-#This function will take the action from user and randomly pick an impact
-#on the player budget. 
+
 def get_budget_impact(action):
+    """ 
+    
+    Primary author: Ademir Ferreyra
+    
+    Techniques: ////
+    
+    Description: This function will take the action from the user and randomly 
+    pick an impact on the player budget. 
+    
+    Args:
+        action (str): the potential action/choice a player makes
+    
+    Returns:
+        Random interval that is low or high
+    
+    """
     if action not in budget_impact:
         return 0
     low, high = budget_impact[action]
@@ -156,12 +193,23 @@ def get_budget_impact(action):
 
 
 def update_affection(animal_name, animals_dict, player_action):
-    """_summary_
+    """
+    Primary author: Ademir Ferreyra
+    
+    Techniques: keyword arguments
+    
+    Description: Function that raises ValueErrors if the animal_name or 
+    player_action doesn't match the set actions presented. It also gets the 
+    current affeciton level
 
     Args:
         animal_name (str): name of animal
         animal_dict (str): dictionary storing animals and their affection levels
         player_action (str): action player made
+        
+    Returns:
+        new_affection: updates animal dictionary and adds the change to the
+        old affection to be the new affection
     """
 
 #building blocks of an algorithm
@@ -201,19 +249,33 @@ def update_affection(animal_name, animals_dict, player_action):
 
 #########################################################################################################
 
-### Abe_function #####
-#My function is called status_check(). What is does is check the status of 
-#player's budget and satisfaction score. If the budget ever goes below 0 or 
-#satisfaction score ever goes below 40 then the game is over and player loses 
-#the game. The function will return True and the game keeps going. Once the 
-# function returns False then the game is over. 
-
-
-#My function  
 def status_checker(budget):
-    if budget < 0:
-        print("Game over: You ran out of money")
-        return False
-    else:
-        return True
+    """ 
+    
+    Primary author: Abdurakhmon (Abe) Tukhtasinov
+    
+    Techniques: conditional expression
+    
+    Description: Checks the status of player's budget and satisfaction score. 
+    If the budget ever goes below 0 or satisfaction score ever goes below 40 
+    then the game is over and player loses the game. The function will return 
+    True and the game keeps going. Once the function returns False then the 
+    game is over.
+    
+    Args:
+        budget (int): references the global budget variable
+        
+    Returns:
+        Either a print statement showing the game over or a True which
+        continues the game 
+    
+    """
+    
+    False if budget > 0 else False, print("Game over: You ran out of money")
+    
+    # if budget < 0:
+    #     print("Game over: You ran out of money")
+    #     return False
+    # else:
+    #     return True
     
