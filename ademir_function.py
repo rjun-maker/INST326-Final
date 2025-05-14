@@ -109,7 +109,7 @@ def update_affection(animal_name, animals_dict, player_action):
     if player_action not in p_action_good:
         if player_action not in p_action_bad:
             if player_action not in p_action_silly:
-            raise ValueError(f"Unknown Action: {player_action}")
+                raise ValueError(f"Unknown Action: {player_action}")
     
 #get the current affection level
     current_affection = animals_dict[animal_name]
