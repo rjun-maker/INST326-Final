@@ -5,7 +5,7 @@ Ademir Ferreyra, and Abdurakhmon (Abe) Tukhtasinov)
 """
 
 import random 
-import level_checker 
+from level_checker import LevelChecker 
 import ademir_function
 import Abe_function
 
@@ -53,7 +53,7 @@ def Ren_function(scenario):
   
 budget = 100
 affection = 100
-
+player = LevelChecker()
 status = True
 while status:
     animal = random.choice(ademir_function.animals) # pick a random animal
@@ -99,6 +99,15 @@ while status:
     budget_change = ademir_function.get_budget_impact(user_response)
     budget += budget_change
     
+    # implemented level checker's function
+    new_level = min(ademir_function.animals_dict[animal] // 10 + 1, 10)
+    player.update_level(new_level)
+    print(player)
+
+    if player.win_condition():
+        print("You win!")
+        break
+        
     print("Updated pet score: ", ademir_function.animals_dict[animal])
     print(f"Current budget: ${budget} \n")
     status = Abe_function.status_checker(budget)
