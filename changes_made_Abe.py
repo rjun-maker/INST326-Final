@@ -1,7 +1,5 @@
-#### Ren_function.py ####
 """ 
-function that will determine a randomly generated scenario the result will
-pop out an animal event.
+Zoo keeper simulator that combines all of our code into one
 
 """
 
@@ -28,12 +26,13 @@ print("""=======================================================================
 🦁🐯🐵🐸🐧🐘🦓🦒🐍🐢🐨🐼🐷🐮🐔🐊🦘🐺🦙🐫🦛🐦🐴🦔🐻‍❄️🐬🦆🦉🐿️🦇🐠🦞🪱🐙🦑🦐🦢
 ========================================================================""")
 
+## player base budget/affection level
 
-def Ren_function(scenario):
-  print(scenario)
-  
 budget = 50
 affection = 50
+
+def Ren_function(scenario):
+    print(scenario)
 
 status = True
 while status:
@@ -86,7 +85,6 @@ while status:
 # Final Project interim deliverable - Ademir Ferreyra
 
 #def with parameters
-import random
 
 p_action_good = {
     "pet" : 5,
