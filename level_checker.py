@@ -15,7 +15,7 @@ class LevelChecker:
     
     Primary author: Aiden Anderson
     
-    Techniques: use of key function sorted()
+    Techniques: magic method other than __init__() and custom class
     
     Description: Represents a player and tracks level progress and if they've 
     won the game

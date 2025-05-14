@@ -183,7 +183,7 @@ def get_budget_impact(action):
     
     Primary author: Ademir Ferreyra
     
-    Techniques: ////
+    Techniques: conditinal expression
     
     Description: This function will take the action from the user and randomly 
     pick an impact on the player budget. 
@@ -195,10 +195,10 @@ def get_budget_impact(action):
         Random interval that is low or high
     
     """
-    if action not in budget_impact:
-        return 0
+    
     low, high = budget_impact[action]
-    return random.randint(low, high)
+    
+    return 0 if action not in budget_impact else random.randint(low, high)
 
 
 def update_affection(animal_name, animals_dict, player_action):
