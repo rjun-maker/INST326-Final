@@ -33,7 +33,8 @@ def Ren_function(scenario):
     
     Primary author: Renee Jun and Abdurakhmon (Abe) Tukhtasinov
     
-    Techniques: use of key function sorted()
+    Techniques: use of key function sorted() and f strings containing 
+    expressions
     
     Description: Function that randomizes a scenario and 2 good choices, 2 bad 
     choices, and a silly choice the player can choose. There is a scenrio_tpl 
@@ -43,7 +44,7 @@ def Ren_function(scenario):
     
     Args:
 
-        scenario:
+        scenario: Different scenarios the player can choose from
     
     Returns:
         A print statement showing which scenario and choices the player can pick
@@ -108,7 +109,6 @@ while status:
 #########################################################################################################
 
 #def with parameters
-import random
 
 p_action_good = {
     "pet" : 5,
@@ -252,7 +252,7 @@ def update_affection(animal_name, animals_dict, player_action):
 def status_checker(budget):
     """ 
     
-    Primary author: Abdurakhmon (Abe) Tukhtasinov
+    Primary author: Abdurakhmon (Abe) Tukhtasinov and Renee Jun
     
     Techniques: conditional expression
     

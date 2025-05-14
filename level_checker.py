@@ -12,7 +12,15 @@
 
 class LevelChecker:
     """
-    Represents a player and tracks level progress and if they've won the game
+    
+    Primary author: Aiden Anderson
+    
+    Techniques: use of key function sorted()
+    
+    Description: Represents a player and tracks level progress and if they've 
+    won the game
+    
+    
     """
 
     def __init__(self):
